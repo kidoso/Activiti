@@ -83,7 +83,7 @@ public class ProcessRuntimeIT {
     private static final String SUPER_PROCESS = "superProcess";
     private static final String TWO_TASKS_PROCESS = "twoTaskProcess";
     private static final Pageable PAGEABLE = Pageable.of(0,
-        50);
+        200);
     public static final String CATEGORIZE_HUMAN_PROCESS_CATEGORY = "test-category";
 
     @Autowired
@@ -694,7 +694,7 @@ public class ProcessRuntimeIT {
         securityUtil.logInAs("admin");
 
         Page<ProcessDefinition> processDefinitionPage = processAdminRuntime.processDefinitions(Pageable.of(0,
-                50));
+                200));
         assertThat(processDefinitionPage.getContent()).isNotNull();
         assertThat(processDefinitionPage.getContent()).extracting(ProcessDefinition::getKey)
                 .contains(CATEGORIZE_HUMAN_PROCESS);
@@ -1072,7 +1072,7 @@ public class ProcessRuntimeIT {
         securityUtil.logInAs("manager");
 
         Page<ProcessInstance> processInstancePage = processAdminRuntime.processInstances(Pageable.of(0,
-            50));
+            200));
 
         assertThat(processInstancePage).isNotNull();
     }
