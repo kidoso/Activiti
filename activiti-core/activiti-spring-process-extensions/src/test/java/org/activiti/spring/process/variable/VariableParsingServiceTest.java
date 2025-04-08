@@ -24,7 +24,7 @@ import org.activiti.spring.process.variable.types.VariableType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
@@ -48,7 +48,7 @@ public class VariableParsingServiceTest {
     @Autowired
     private DateFormatterProvider dateFormatterProvider;
 
-    @MockitoBean
+    @MockBean
     private RepositoryService repositoryService;
 
     @Test

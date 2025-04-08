@@ -35,7 +35,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class ProcessVariablesInitiatorIT {
@@ -46,22 +46,22 @@ public class ProcessVariablesInitiatorIT {
     @Autowired
     private ProcessVariablesInitiator processVariablesInitiator;
 
-    @MockitoBean
+    @MockBean
     private ProcessExtensionService processExtensionService;
 
-    @MockitoBean
+    @MockBean
     private UserGroupManager userGroupManager;
 
-    @MockitoBean
+    @MockBean
     private RepositoryService repositoryService;
 
-    @MockitoBean
+    @MockBean
     private RuntimeService runtimeService;
 
-    @MockitoBean
+    @MockBean
     private TaskService taskService;
 
-    @MockitoBean
+    @MockBean
     private ManagementService managementService;
 
     @SpringBootApplication
